@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # パスワードを暗号化
     encrypted_pass = BCrypt::Password.create(params[:user][:pass])
     
     @user = User.new(uid: params[:user][:uid], pass: encrypted_pass)

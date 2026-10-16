@@ -1,3 +1,8 @@
+<p>
+  現在ログイン中のユーザID: <%= session[:login_uid] %> | 
+  <%= link_to 'ログアウト', top_logout_path %>
+</p>
+
 <h1>ツイート一覧</h1>
 
 <%= link_to '新規ツイート', new_tweet_path %> | <%= link_to 'ユーザ一覧へ', users_path %>
