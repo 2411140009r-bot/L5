@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :tweets
+  resources :likes
   
   root 'top#main'
   post 'top/login'
