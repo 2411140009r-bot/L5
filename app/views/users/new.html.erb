@@ -1,0 +1,15 @@
+<h1>ユーザ登録</h1>
+
+<%= form_with model: @user, local: true do |f| %>
+  <p>
+    <%= f.label :uid, 'ユーザID' %><br>
+    <%= f.text_field :uid %>
+  </p>
+  <p>
+    <%= f.label :pass, 'パスワード' %><br>
+    <%= f.password_field :pass %>
+  </p>
+  <p><%= f.submit '登録する' %></p>
+<% end %>
+
+<%= link_to '一覧に戻る', users_path %>

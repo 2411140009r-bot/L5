@@ -1,0 +1,15 @@
+<h1>新規ツイート</h1>
+
+<%= form_with model: @tweet, local: true do |f| %>
+  <p>
+    <%= f.label :message, 'メッセージ' %><br>
+    <%= f.text_field :message %>
+  </p>
+  <p>
+    <%= f.label :user_id, 'ユーザのID（※先ほど登録したユーザのidの数字を入れてください）' %><br>
+    <%= f.number_field :user_id %>
+  </p>
+  <p><%= f.submit 'ツイートする' %></p>
+<% end %>
+
+<%= link_to '一覧に戻る', tweets_path %>

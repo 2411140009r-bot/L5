@@ -1,0 +1,12 @@
+<h1>ツイート一覧</h1>
+
+<%= link_to '新規ツイート', new_tweet_path %> | <%= link_to 'ユーザ一覧へ', users_path %>
+
+<hr>
+
+<% @tweets.each do |tweet| %>
+  <p>
+    【ユーザID: <%= tweet.user_id %>】 <%= tweet.message %> 
+    <%= link_to '削除', tweet, data: { turbo_method: :delete } %>
+  </p>
+<% end %>
