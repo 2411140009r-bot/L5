@@ -7,7 +7,7 @@ class TopController < ApplicationController
     user = User.find_by(uid: params[:uid])
     if user && user.authenticate(params[:pass])
       session[:login_uid] = user.uid
-      redirect_to top_main_path
+      redirect_to root_path # ← ここを root_path に変更
     else
       render 'login'
     end
