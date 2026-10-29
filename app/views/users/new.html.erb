@@ -1,6 +1,6 @@
-<h1>ユーザ登録</h1>
+<h2>新規ユーザー登録</h2>
 
-<%= form_with model: @user, local: true do |f| %>
+<%= form_with model: @user do |f| %>
   <p>
     <%= f.label :uid, 'ユーザーID' %>
     <%= f.text_field :uid %>
@@ -15,5 +15,3 @@
   </p>
   <%= f.submit '登録' %>
 <% end %>
-
-<%= link_to '一覧に戻る', users_path %>
