@@ -5,16 +5,11 @@ class TopController < ApplicationController
 
   def login
     user = User.find_by(uid: params[:uid])
-    if user && BCrypt::Password.new(user.pass) == params[:pass]
+    if user && user.authenticate(params[:pass])
       session[:login_uid] = user.uid
-      redirect_to tweets_path
+      redirect_to top_main_path
     else
-      render 'login_form', status: :unprocessable_entity
+      render 'login'
     end
-  end
-
-  def logout
-    session.delete(:login_uid)
-    redirect_to root_path
   end
 end

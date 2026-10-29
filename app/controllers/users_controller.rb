@@ -8,20 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    encrypted_pass = BCrypt::Password.create(params[:user][:pass])
-    
-    @user = User.new(uid: params[:user][:uid], pass: encrypted_pass)
-    
-    if @user.save
+    u = User.new(
+      uid: params[:user][:uid],
+      password: params[:user][:password],
+      password_confirmation: params[:user][:password_confirmation]
+    )
+    if u.save
       redirect_to users_path
     else
-      render 'new', status: :unprocessable_entity
+      render 'new'
     end
-  end
-
-  def destroy
-    user = User.find(params[:id])
-    user.destroy
-    redirect_to users_path
   end
 end
