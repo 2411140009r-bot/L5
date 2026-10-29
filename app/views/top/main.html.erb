@@ -2,9 +2,9 @@
 
 <% if current_user %>
   <p>ログイン中: <%= current_user.uid %></p>
-  <p><%= link_to 'ログアウト', top_logout_path %></p>
+  <p><%= link_to 'ログアウト', '/top/logout' %></p>
 <% else %>
-  <p><%= link_to 'ログイン', top_main_path %></p>
+  <p><%= link_to 'ログイン', '/top/login' %></p>
 <% end %>
 
 <hr>
