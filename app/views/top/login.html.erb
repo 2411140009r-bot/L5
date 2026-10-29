@@ -1,2 +1,18 @@
-<h1>Top#login</h1>
-<p>Find me in app/views/top/login.html.erb</p>
+<h2>ログイン</h2>
+
+<%= form_with url: top_login_path, method: :post do |f| %>
+  <p>
+    <%= f.label :uid, 'ユーザーID' %>
+    <%= f.text_field :uid %>
+  </p>
+  <p>
+    <%= f.label :pass, 'パスワード' %>
+    <%= f.password_field :pass %>
+  </p>
+  <p>
+    <%= f.submit 'ログイン' %>
+  </p>
+<% end %>
+
+<hr>
+<%= link_to 'トップページへ戻る', root_path %>
